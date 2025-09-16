@@ -12,7 +12,7 @@ public interface GenericDao<T, ID> {
 
     List<T> findAll();
 
-    T save(T entity);
+    T create(T entity);
 
     T update(T entity);
 

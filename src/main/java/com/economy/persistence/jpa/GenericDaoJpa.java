@@ -36,7 +36,7 @@ public abstract class GenericDaoJpa<T, ID> implements GenericDao<T, ID> {
     }
 
     @Override
-    public T save(T entity) {
+    public T create(T entity) {
         try (EntityManager em = em()) {
             EntityTransaction tx = em.getTransaction();
             try {
