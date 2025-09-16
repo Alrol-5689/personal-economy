@@ -37,62 +37,66 @@ public abstract class GenericDaoJpa<T, ID> implements GenericDao<T, ID> {
 
     @Override
     public T save(T entity) {
-        EntityTransaction tx = null;
         try (EntityManager em = em()) {
-            tx = em.getTransaction();
-            tx.begin();
-            em.persist(entity);
-            tx.commit();
-            return entity;
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) tx.rollback();
-            throw e;
+            EntityTransaction tx = em.getTransaction();
+            try {
+                tx.begin();
+                em.persist(entity);
+                tx.commit();
+                return entity;
+            } catch (RuntimeException e) {
+                if (tx.isActive()) tx.rollback();
+                throw e;
+            }
         }
     }
 
     @Override
     public T update(T entity) {
-        EntityTransaction tx = null;
         try (EntityManager em = em()) {
-            tx = em.getTransaction();
-            tx.begin();
-            T merged = em.merge(entity);
-            tx.commit();
-            return merged;
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) tx.rollback();
-            throw e;
+            EntityTransaction tx = em.getTransaction();
+            try {
+                tx.begin();
+                T merged = em.merge(entity);
+                tx.commit();
+                return merged;
+            } catch (RuntimeException e) {
+                if (tx.isActive()) tx.rollback();
+                throw e;
+            }
         }
     }
 
     @Override
     public void delete(T entity) {
-        EntityTransaction tx = null;
         try (EntityManager em = em()) {
-            tx = em.getTransaction();
-            tx.begin();
-            T attached = entity;
-            if (!em.contains(entity)) attached = em.merge(entity);
-            em.remove(attached);
-            tx.commit();
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) tx.rollback();
-            throw e;
+            EntityTransaction tx = em.getTransaction();
+            try {
+                tx.begin();
+                T attached = entity;
+                if (!em.contains(entity)) attached = em.merge(entity);
+                em.remove(attached);
+                tx.commit();
+            } catch (RuntimeException e) {
+                if (tx.isActive()) tx.rollback();
+                throw e;
+            }
         }
     }
 
     @Override
     public void deleteById(ID id) {
-        EntityTransaction tx = null;
         try (EntityManager em = em()) {
-            tx = em.getTransaction();
-            tx.begin();
-            T ref = em.find(entityClass, id);
-            if (ref != null) em.remove(ref);
-            tx.commit();
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) tx.rollback();
-            throw e;
+            EntityTransaction tx = em.getTransaction();
+            try {
+                tx.begin();
+                T ref = em.find(entityClass, id);
+                if (ref != null) em.remove(ref);
+                tx.commit();
+            } catch (RuntimeException e) {
+                if (tx.isActive()) tx.rollback();
+                throw e;
+            }
         }
     }
 
