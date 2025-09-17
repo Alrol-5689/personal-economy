@@ -10,4 +10,6 @@ public interface IncomeDao extends GenericDao<Income, Long> {
     void create(Income income, Long userId);
 
     List<Income> findByMonthAndYear(int month, int year, Long userId);
+
+    List<Income> findByUser(Long userId);
 }
