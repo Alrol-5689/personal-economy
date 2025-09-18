@@ -12,7 +12,7 @@
 <header class="topbar">
     <h1>Personal Economy</h1>
     <nav>
-        <a href="${pageContext.request.contextPath}/user/home">Resumen</a>
+        <a href="${pageContext.request.contextPath}/users/home">Resumen</a>
         <a href="${pageContext.request.contextPath}/user/cashflow">Cash flow</a>
         <a href="${pageContext.request.contextPath}/user/runway">Runway</a>
         <a href="${pageContext.request.contextPath}/user/expenses/new">Registrar gasto</a>

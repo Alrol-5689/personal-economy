@@ -11,7 +11,7 @@
 <header class="topbar">
     <h1>Capital mensual</h1>
     <nav>
-        <a href="${pageContext.request.contextPath}/user/home">Inicio</a>
+        <a href="${pageContext.request.contextPath}/users/home">Inicio</a>
         <a href="${pageContext.request.contextPath}/user/runway">Runway</a>
     </nav>
 </header>

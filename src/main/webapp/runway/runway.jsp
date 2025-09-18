@@ -13,7 +13,7 @@
 <header class="topbar">
     <h1>Runway</h1>
     <nav>
-        <a href="${pageContext.request.contextPath}/user/home">Volver al inicio</a>
+        <a href="${pageContext.request.contextPath}/users/home">Volver al inicio</a>
         <a href="${pageContext.request.contextPath}/user/cashflow">Ver cash flow</a>
         <a href="${pageContext.request.contextPath}/user/capital">Registrar capital</a>
     </nav>

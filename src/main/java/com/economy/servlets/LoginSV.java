@@ -28,7 +28,7 @@ public class LoginSV extends HttpServlet {
 
         HttpSession session = req.getSession(false);
         if (session != null && session.getAttribute("userId") != null) {
-            resp.sendRedirect(req.getContextPath() + "/user/home");
+            resp.sendRedirect(req.getContextPath() + "/users/home");
             return;
         }
         req.getRequestDispatcher("/auth/login.jsp").forward(req, resp);
@@ -67,7 +67,7 @@ public class LoginSV extends HttpServlet {
         session.setAttribute("username", user.getUsername());
         session.setMaxInactiveInterval(30 * 60); 
 
-        resp.sendRedirect(req.getContextPath() + "/user/home");
+        resp.sendRedirect(req.getContextPath() + "/users/home");
     }
 
     // ===== Helpers =====
