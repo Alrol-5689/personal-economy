@@ -4,6 +4,7 @@ import java.time.YearMonth;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,7 +17,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "monthly_capital", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"user_id", "month"})
+        @UniqueConstraint(columnNames = {"user_id", "month"}, name = "uk_user_month")
 })
 public class MonthlyCapital {
 
@@ -29,7 +30,7 @@ public class MonthlyCapital {
 
     @NotNull
     @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false, foreignKey= @ForeignKey(name = "fk_monthly_capital_user"))
     private User user;
 
     @NotNull
