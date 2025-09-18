@@ -2,7 +2,10 @@ package com.economy.model;
 
 import java.time.YearMonth;
 
+import com.economy.persistence.converter.YearMonthAttributeConverter;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
@@ -34,6 +37,7 @@ public class MonthlyCapital {
     private User user;
 
     @NotNull
+    @Convert(converter = YearMonthAttributeConverter.class)
     @Column(name = "month", nullable = false)
     private YearMonth month;
 
