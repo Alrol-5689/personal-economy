@@ -7,6 +7,14 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- SI USARÁIS UN POM PADRE, DESCOMENTAR Y RELLENAR. POR EJEMPLO, SI USO FRAMEWORK, USARÉ EL POM PADRE DE FRAMEWORK. EJEMPLO: SPRING BOOT, SPRING, ETC. -->
+  <!-- <parent> 
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-started-parent</artifactId>
+    <version>3.3.0</version>
+    <relativePath/>
+  </parent> -->
+
   <groupId>com.economy</groupId>
   <artifactId>personal-economy</artifactId>
   <version>0.1.0</version>
