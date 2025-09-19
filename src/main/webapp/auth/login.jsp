@@ -31,7 +31,9 @@
 
                 <button type="submit">Entrar</button>
             </form>
-            <p class="text-small">¿Aún no tienes cuenta? <a href="${pageContext.request.contextPath}/users/register">Crear nuevo usuario</a></p>
+            <p class="text-small">¿Aún no tienes cuenta? 
+                <a href="${pageContext.request.contextPath}/users/register">Crear nuevo usuario</a>
+            </p>
         </section>
     </main>
 </body>

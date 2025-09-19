@@ -13,7 +13,7 @@
     <h1>Registrar gasto</h1>
     <nav>
         <a href="${pageContext.request.contextPath}/users/home">Volver al inicio</a>
-        <a href="${pageContext.request.contextPath}/user/cashflow">Cash flow</a>
+        <a href="${pageContext.request.contextPath}/users/cashflow">Cash flow</a>
     </nav>
 </header>
 <main class="container">
@@ -27,7 +27,7 @@
             </c:forEach>
         </ul>
     </c:if>
-    <form action="${pageContext.request.contextPath}/user/expenses/new" method="post" class="form-grid">
+    <form action="${pageContext.request.contextPath}/users/expenses/new" method="post" class="form-grid">
         <label for="name">Nombre</label>
         <input type="text" id="name" name="name" value="${expense.name}" required>
 
@@ -40,9 +40,9 @@
         <label for="type">Tipo</label>
         <select id="type" name="type" required>
             <option value="">Selecciona un tipo</option>
-                        <c:forEach var="type" items="${types}">
-                <option value="${type}" <c:if test="${expense.type == type}">selected</c:if>>${type}</option>
-            </c:forEach>
+                <c:forEach var="type" items="${types}">
+                    <option value="${type}" <c:if test="${expense.type == type}">selected</c:if>>${type}</option>
+                </c:forEach>
         </select>
 
         <label for="date">Fecha</label>

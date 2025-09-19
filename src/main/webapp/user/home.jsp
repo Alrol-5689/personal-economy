@@ -13,9 +13,9 @@
     <h1>Personal Economy</h1>
     <nav>
         <a href="${pageContext.request.contextPath}/users/home">Resumen</a>
-        <a href="${pageContext.request.contextPath}/user/cashflow">Cash flow</a>
-        <a href="${pageContext.request.contextPath}/user/runway">Runway</a>
-        <a href="${pageContext.request.contextPath}/user/expenses/new">Registrar gasto</a>
+        <a href="${pageContext.request.contextPath}/users/cashflow">Cash flow</a>
+        <a href="${pageContext.request.contextPath}/users/runway">Runway</a>
+        <a href="${pageContext.request.contextPath}/users/expenses/new">Registrar gasto</a>
     </nav>
 </header>
 <main class="container">
@@ -45,22 +45,22 @@
         <div class="card">
             <h3>Cash flow</h3>
             <p>Consulta el detalle mensual de ingresos, gastos y saldo acumulado.</p>
-            <a class="btn" href="${pageContext.request.contextPath}/user/cashflow">Ver cash flow</a>
+            <a class="btn" href="${pageContext.request.contextPath}/users/cashflow">Ver cash flow</a>
         </div>
         <div class="card">
             <h3>Runway</h3>
             <p>Analiza tu liquidez y cuánto tiempo puedes mantener tus gastos actuales.</p>
-            <a class="btn" href="${pageContext.request.contextPath}/user/runway">Ver runway</a>
+            <a class="btn" href="${pageContext.request.contextPath}/users/runway">Ver runway</a>
         </div>
         <div class="card">
             <h3>Registrar gasto</h3>
             <p>Registra tus gastos para mantener actualizado tu flujo de caja.</p>
-            <a class="btn" href="${pageContext.request.contextPath}/user/expenses/new">Registrar gasto</a>
+            <a class="btn" href="${pageContext.request.contextPath}/users/expenses/new">Registrar gasto</a>
         </div>
         <div class="card">
             <h3>Capital mensual</h3>
             <p>Guarda el efectivo disponible por mes para calcular tu runway.</p>
-            <a class="btn" href="${pageContext.request.contextPath}/user/capital">Registrar capital</a>
+            <a class="btn" href="${pageContext.request.contextPath}/users/capital">Registrar capital</a>
         </div>
     </section>
 </main>

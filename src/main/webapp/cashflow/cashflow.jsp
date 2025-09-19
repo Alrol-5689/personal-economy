@@ -14,8 +14,8 @@
     <h1>Cash flow</h1>
     <nav>
         <a href="${pageContext.request.contextPath}/users/home">Volver al inicio</a>
-        <a href="${pageContext.request.contextPath}/user/runway">Ver runway</a>
-        <a href="${pageContext.request.contextPath}/user/expenses/new">Registrar gasto</a>
+        <a href="${pageContext.request.contextPath}/users/runway">Ver runway</a>
+        <a href="${pageContext.request.contextPath}/users/expenses/new">Registrar gasto</a>
     </nav>
 </header>
 <main class="container">

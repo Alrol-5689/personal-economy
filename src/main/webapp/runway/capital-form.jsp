@@ -12,7 +12,7 @@
     <h1>Capital mensual</h1>
     <nav>
         <a href="${pageContext.request.contextPath}/users/home">Inicio</a>
-        <a href="${pageContext.request.contextPath}/user/runway">Runway</a>
+        <a href="${pageContext.request.contextPath}/users/runway">Runway</a>
     </nav>
 </header>
 <main class="container">
@@ -26,7 +26,7 @@
             </c:forEach>
         </ul>
     </c:if>
-    <form action="${pageContext.request.contextPath}/user/capital" method="post" class="form-grid">
+    <form action="${pageContext.request.contextPath}/users/capital" method="post" class="form-grid">
         <label for="month">Mes</label>
         <input type="month" id="month" name="month" value="${capital.month}">
 
