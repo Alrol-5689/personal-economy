@@ -36,7 +36,7 @@ public class ExpenseDaoJpa extends GenericDaoJpa<Expense, Long> implements Expen
     public List<Expense> findByUser(Long userId) {
         try (EntityManager em = super.em()) {
             return em.createQuery(
-                    "select e from Expense e where e.user.id = :userId order by e.date",
+                    "select distinct e from Expense e left join fetch e.reimbursements where e.user.id = :userId order by e.date",
                     Expense.class)
                     .setParameter("userId", userId)
                     .getResultList();
