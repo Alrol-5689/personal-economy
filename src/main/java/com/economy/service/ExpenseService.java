@@ -1,6 +1,7 @@
 package com.economy.service;
 
 import com.economy.model.Expense;
+import com.economy.model.User;
 import com.economy.persistence.dao.ExpenseDao;
 import com.economy.persistence.jpa.ExpenseDaoJpa;
 
@@ -18,7 +19,15 @@ public class ExpenseService {
     }
 
     public void create(Expense expense, Long userId) {
-        if (expense == null) throw new IllegalArgumentException("Expense cannot be null");  
+        if (expense == null) throw new IllegalArgumentException("Expense cannot be null");
+        if (userId == null) throw new IllegalArgumentException("User id is required");
+
+        if (expense.getUser() == null) {
+            User owner = new User();
+            owner.setId(userId);
+            expense.setUser(owner);
+        }
+
         var violations = VALIDATOR.validate(expense);
         if (!violations.isEmpty()) throw new IllegalArgumentException("Expense data is not valid: " + violations);        
         expenseDao.create(expense, userId);
