@@ -73,7 +73,7 @@ public class CapitalSnapshotServlet extends BaseSV {
 
         if (errors.isEmpty()) {
             try {
-                capitalService.saveSnapshot(capital, userId);
+                capitalService.create(capital, userId);
                 resp.sendRedirect(req.getContextPath() + "/users/capital?success=1");
                 return;
             } catch (IllegalArgumentException ex) {

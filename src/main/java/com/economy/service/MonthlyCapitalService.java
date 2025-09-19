@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.economy.model.MonthlyCapital;
+import com.economy.model.User;
 import com.economy.persistence.dao.MonthlyCapitalDao;
 import com.economy.persistence.jpa.MonthlyCapitalDaoJpa;
 
@@ -21,8 +22,16 @@ public class MonthlyCapitalService {
         this.monthlyCapitalDao = new MonthlyCapitalDaoJpa();
     }
 
-    public MonthlyCapital saveSnapshot(MonthlyCapital capital, Long userId) {
+    public MonthlyCapital create(MonthlyCapital capital, Long userId) {
         if (capital == null) throw new IllegalArgumentException("Capital snapshot cannot be null");
+        if (userId == null) throw new IllegalArgumentException("User id is required");
+
+        if (capital.getUser() == null) {
+            User owner = new User();
+            owner.setId(userId);
+            capital.setUser(owner);
+        }
+
         var violations = VALIDATOR.validate(capital);
         if (!violations.isEmpty()) throw new IllegalArgumentException("Capital data is not valid: " + violations);
         return monthlyCapitalDao.saveForUser(capital, userId);
