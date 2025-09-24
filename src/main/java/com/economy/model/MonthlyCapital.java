@@ -42,16 +42,16 @@ public class MonthlyCapital {
     private YearMonth month;
 
     @Column(name = "savings_account", nullable = false)
-    private double savingsAccount;
+    private double savingsAccount; // in bank
 
     @Column(name = "piggy_bank", nullable = false)
-    private double piggyBank;
+    private double piggyBank; // at home
 
     @Column(name = "checking_account", nullable = false)
-    private double checkingAccount;
+    private double checkingAccount; // in bank (usually for daily use)
 
     @Column(name = "cash", nullable = false)
-    private double cash;
+    private double cash; // physical cash
 
     public MonthlyCapital() {}
 
