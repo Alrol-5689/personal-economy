@@ -138,6 +138,10 @@
           <version>3.11.0</version>
           <configuration>
             <release>17</release>
+            <jdkToolchain>
+              <version>17</version>
+              <vendor>adoptium</vendor>
+            </jdkToolchain>
           </configuration>
         </plugin>
 
