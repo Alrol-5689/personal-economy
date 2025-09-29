@@ -118,7 +118,7 @@ public class CashflowService {
         public int getYear() { return month.getYear(); }
 
         public String getMonthLabel() {
-            return month.getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
+            return month.getMonth().getDisplayName(TextStyle.FULL, Locale.forLanguageTag("es-ES"));
         }
 
         public double getActiveIncome() { return activeIncome; }
