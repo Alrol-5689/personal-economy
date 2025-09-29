@@ -27,7 +27,7 @@
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
     <!-- versions -->
     <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
     <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
@@ -130,10 +130,9 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.11.0</version>
           <configuration>
-            <release>17</release>
+            <release>21</release>
             <jdkToolchain>
-              <version>17</version>
-              <vendor>adoptium</vendor>
+              <version>21</version>
             </jdkToolchain>
           </configuration>
         </plugin>
